@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Make Appointment</title>
+    <link rel="icon" href="./images/super-garage-logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/calender.css">
+    <link rel="stylesheet" href="css/vanilla-calendar-min.css">
+</head>
+
+<body>
+
+
+    <nav class="top-nav navbar navbar-expand-lg">
+        <!-- Navbar brand -->
+        <!-- <a class="navbar-brand font-bold" href="#">Navbar</a> -->
+        <img class="logo-image" src="./images/super-garage-logo.png" />
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
+                class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto text-center" id="nav-ul">
+                <li class="nav-li nav-item">
+                    <a class="nav-link font-bold  text-capitalize" href="./index.html">Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-li nav-item">
+                    <a class="nav-link font-bold  text-capitalize" href="#" onclick="showServices();">Services <i
+                            class="down-arrow-i fa fa-arrow-circle-o-down" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-li nav-item active">
+                    <a class="nav-link font-bold  text-capitalize" href="#">Make Appointment</a>
+                </li>
+                <li class="nav-li nav-item">
+                    <a class="nav-link font-bold  text-capitalize" href="./index.html#about">About Us</a>
+                </li>
+                <li class="nav-li nav-item">
+                    <a class="nav-link font-bold  text-capitalize" href="./index.html#contact">Contact</a>
+                </li>
+            </ul>
+            <!-- Links -->
+            <!-- Search form -->
+            <form class="nav-form form-inline md-form mb-0 ml-5">
+                <div class="search-div">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input class="form-control ml-3" id="myInput" onkeyup="serviceSearch()"
+                        onfocusin="showSearchList();" onfocusout="disapperSearchList();" type="text"
+                        placeholder="Search By Service Name" aria-label="Search">
+
+                    <ul id="searchUl" style="display: none">
+                        <li><a href="#">First service name too long name service</a></li>
+                        <li><a href="#">Second service name</a></li>
+                        <li><a href="#">Second service name</a></li>
+                        <li><a href="#">Second service name</a></li>
+                        <li><a href="#">Second service name</a></li>
+                        <li><a href="#">Third service name</a></li>
+                        <li><a href="#">Fourth service name</a></li>
+                        <li><a href="#">title for sub service1</a></li>
+                        <li><a href="#">title for sub service2</a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <!-- Collapsible content -->
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Start Dropdown Menu Section -->
+    <section class="dropdown-menu-section" id="dropdown-id" style="display: none;">
+        <div class="services-menu" id="services-menu-id" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="one-col col-6 col-md-3">
+                        <a href="">
+                            <p class=" text-capitalize">First Service Title</p>
+                        </a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 1</a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 2</a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 3</a>
+                    </div>
+
+                    <div class="one-col col-6 col-md-3 ">
+                        <a href="">
+                            <p class=" text-capitalize">Second Service Title</p>
+                        </a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 1</a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 2</a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 3</a>
+                    </div>
+
+                    <div class="one-col col-6 col-md-3">
+                        <a href="">
+                            <p class=" text-capitalize">Third Service Title</p>
+                        </a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 1</a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 2</a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 3</a>
+                    </div>
+
+                    <div class="one-col col-6 col-md-3">
+                        <a href="">
+                            <p class=" text-capitalize">Fourth Service Title</p>
+                        </a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 1</a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 2</a>
+                        <a class="d-block mb-2" href="" target="_blank">sub sevice 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+
+        <div class="container-fluid">
+
+
+            <div class="text-center mt-3 mb-3 p-3">
+                <h2 class="text-capitalize">Make Appointment Online </h2>
+            </div>
+
+
+            <div id="myCalendar" class="vanilla-calendar"></div>
+
+            <div class="row">
+                <div class="mx-auto p-4 col-md-6 ">
+                    <h2 class="mb-4 text-capitalize text-center">contact information</h2>
+                    <form>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-12 input-group">
+                                    <span class="input-group-addon" style="padding: 3px 4px 0px 4px;"><i
+                                            class="fa fa-calendar fa-2x" aria-hidden="true"></i></span>
+
+
+                                    <input type="text" class="form-control" placeholder="Choose Date From Calendar"
+                                        id="date-clalender-input" readonly required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="row">
+                                <div class="col-6 ">
+                                    <input type="text" class="form-control" placeholder="First Name" required>
+                                </div>
+                                <div class="col-6 ">
+                                    <input type="text" class="form-control" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Payment Method" required>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" rows="4" placeholder="Your Descreption" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- Start Footer Section -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    Copyright &copy; 2019 SUPER GARAGE Designed By<span class="designed-by"> Eng.Wael</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Footer Section -->
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vanilla-calendar.js"></script>
+
+
+
+
+
+
+    <script>
+        let calendar = new VanillaCalendar({
+            selector: "#myCalendar"
+        })
+
+        calendar.set({
+            availableDates: [{
+                date: '2019-10-10'
+            },
+            {
+                date: '2019-11-15'
+            },
+            {
+                date: '2019-10-17'
+            }
+            ]
+        })
+
+
+        calendar.set({
+            pastDates: false
+        })
+        calendar.set({
+            availableWeekDays: [{
+                day: 'monday'
+            },
+
+
+            {
+                day: 'tuesday'
+            },
+
+            {
+                day: 'wednesday'
+            },
+            {
+                day: 'thursday'
+            },
+            {
+                day: 'friday'
+            },
+            {
+                day: 'saturday'
+            }
+            ],
+            datesFilter: true
+        })
+        calendar.set({
+            onSelect: ((data, element) => {
+
+                console.log(data.date);
+                var res = data.date.split(" ");
+                var fulldate = res[3] +
+                    '-' +
+                    getMonthFromString(res[1]) +
+                    '-' +
+                    res[2];
+                console.log(fulldate);
+
+                document.getElementById("date-clalender-input").value = fulldate;
+
+
+            })
+        });
+
+        function getMonthFromString(mon) {
+
+            var d = Date.parse(mon + "1, 2012");
+            if (!isNaN(d)) {
+                return new Date(d).getMonth() + 1;
+            }
+            return -1;
+        }
+    </script>
+
+    <script>
+        var approveWord = document.getElementById("2019-10-17-1");
+
+        var unapproveWord = document.getElementById("2019-10-17-2");
+
+        if (approveWord != null) {
+            unapproveWord.style.display = "none";
+            approveWord.style.display = "block";
+        }
+    </script>
+
+
+    <script>
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("nav-ul");
+        var btns = header.getElementsByClassName("nav-li");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+
+
+        function showServices() {
+            var x = document.getElementById("dropdown-id");
+            var y = document.getElementById("services-menu-id");
+
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                x.style.animation = "opa 1s 1 linear";
+                y.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+
+        function showSearchList() {
+            var searchList = document.getElementById("searchUl");
+            searchList.style.display = "block";
+        }
+
+        function disapperSearchList() {
+            var searchList = document.getElementById("searchUl");
+            searchList.style.display = "none";
+        }
+
+
+
+        function serviceSearch() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("searchUl");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
