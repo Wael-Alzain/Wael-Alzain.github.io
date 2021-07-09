@@ -58,11 +58,11 @@
                 </p>
             </div>
         </div>
-        <i class="fas fa-angle-left fa-2x change-background"></i>
-        <i class="fas fa-angle-right fa-2x change-background"></i>
+        <!-- <i class="fas fa-angle-left fa-2x change-background"></i>
+        <i class="fas fa-angle-right fa-2x change-background"></i> -->
         <ul class="bullets">
-            <li></li>
             <li class="active"></li>
+            <li></li>
             <li></li>
         </ul>
     </div>
@@ -162,7 +162,7 @@
             </ul>
         </div>
         <div class="imgs-container">
-            <div class="box">
+            <div class="box" data-cat="App">
                 <div class="overlay"></div>
                 <img src="./images/shuffle-01.jpg" alt="">
                 <div class="caption">
@@ -171,7 +171,7 @@
                 </div>
                 <a href="" class="link">+</a>
             </div>
-            <div class="box">
+            <div class="box" data-cat="Photo">
                 <div class="overlay"></div>
                 <img src="./images/shuffle-02.jpg" alt="">
                 <div class="caption">
@@ -180,7 +180,7 @@
                 </div>
                 <a href="" class="link">+</a>
             </div>
-            <div class="box">
+            <div class="box" data-cat="App">
                 <div class="overlay"></div>
                 <img src="./images/shuffle-03.jpg" alt="">
                 <div class="caption">
@@ -189,7 +189,7 @@
                 </div>
                 <a href="" class="link">+</a>
             </div>
-            <div class="box">
+            <div class="box" data-cat="Photo">
                 <div class="overlay"></div>
                 <img src="./images/shuffle-04.jpg" alt="">
                 <div class="caption">
@@ -198,7 +198,7 @@
                 </div>
                 <a href="" class="link">+</a>
             </div>
-            <div class="box">
+            <div class="box" data-cat="Print">
                 <div class="overlay"></div>
                 <img src="./images/shuffle-05.jpg" alt="">
                 <div class="caption">
@@ -207,7 +207,7 @@
                 </div>
                 <a href="" class="link">+</a>
             </div>
-            <div class="box">
+            <div class="box" data-cat="Web">
                 <div class="overlay"></div>
                 <img src="./images/shuffle-06.jpg" alt="">
                 <div class="caption">
@@ -216,7 +216,7 @@
                 </div>
                 <a href="" class="link">+</a>
             </div>
-            <div class="box">
+            <div class="box" data-cat="Web">
                 <div class="overlay"></div>
                 <img src="./images/shuffle-07.jpg" alt="">
                 <div class="caption">
@@ -225,7 +225,7 @@
                 </div>
                 <a href="" class="link">+</a>
             </div>
-            <div class="box">
+            <div class="box" data-cat="Print">
                 <div class="overlay"></div>
                 <img src="./images/shuffle-08.jpg" alt="">
                 <div class="caption">
@@ -323,12 +323,12 @@
                         blandit aliquet elit, eget tincidunt.
                     </p>
                 </div>
-                <div class="testimonials-slider">
+                <div class="testimonials-slider" id="slide1">
                     <div class="testimonial">
                         <img src="images/skills-01.jpg" alt="">
                         <div class="text">
                             <p>
-                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris
+                                1 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris
                                 blandit aliquet elit, eget tincidunt.
                             </p>
                             <i>John Deo.CEO</i>
@@ -338,17 +338,61 @@
                         <img src="images/skills-02.jpg" alt="">
                         <div class="text">
                             <p>
-                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris
+                                1 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris
                                 blandit aliquet elit, eget tincidunt.
                             </p>
                             <i>John Deo.CEO</i>
                         </div>
                     </div>
-                    <div class="dots">
-                        <a href=""></a>
-                        <a class="active" href=""></a>
-                        <a href=""></a>
+                </div>
+                <div class="testimonials-slider" id="slide2">
+                    <div class="testimonial">
+                        <img src="images/skills-03.jpg" alt="">
+                        <div class="text">
+                            <p>
+                                2 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris
+                                blandit aliquet elit, eget tincidunt.
+                            </p>
+                            <i>John Deo.CEO</i>
+                        </div>
                     </div>
+                    <div class="testimonial">
+                        <img src="images/skills-04.jpg" alt="">
+                        <div class="text">
+                            <p>
+                                2 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris
+                                blandit aliquet elit, eget tincidunt.
+                            </p>
+                            <i>John Deo.CEO</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-slider" id="slide3">
+                    <div class="testimonial">
+                        <img src="images/skills-05.jpg" alt="">
+                        <div class="text">
+                            <p>
+                                3 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris
+                                blandit aliquet elit, eget tincidunt.
+                            </p>
+                            <i>John Deo.CEO</i>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <img src="images/skills-06.jpg" alt="">
+                        <div class="text">
+                            <p>
+                                3 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris
+                                blandit aliquet elit, eget tincidunt.
+                            </p>
+                            <i>John Deo.CEO</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="dots">
+                    <a class="active" href="#slide1"></a>
+                    <a href="#slide2"></a>
+                    <a href="#slide3"></a>
                 </div>
             </div>
             <div class="ourSkills">
