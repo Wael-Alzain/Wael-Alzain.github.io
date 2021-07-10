@@ -345,7 +345,7 @@ header nav .form i {
 .landing {
     min-height: 100vh;
     background-color: var(--dark-color);
-    background-image: url('./../images/landing1.jpg');
+    background-image: url('/images/landing1.jpg');
     background-size: cover;
     position: relative;
     transition: background-image 1.5s;
