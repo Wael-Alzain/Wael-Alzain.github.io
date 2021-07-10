@@ -13,12 +13,12 @@
 
 @font-face {
     font-family: openSansRegular;
-    src: url("../webfonts/fonts/OpenSans-Regular.ttf");
+    src: url("../../Kasper/webfonts/fonts/OpenSans-Regular.ttf");
 }
 
 @font-face {
     font-family: openSansBold;
-    src: url("../webfonts/fonts/OpenSans-Bold.ttf");
+    src: url("../../Kasper/webfonts/fonts/OpenSans-Bold.ttf");
 }
 
 * {
