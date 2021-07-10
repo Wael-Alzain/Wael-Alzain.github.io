@@ -33,7 +33,7 @@ goToTop.addEventListener('click', () => {
 
 /* Start Landing section carousel slider */
 
-const imagesPaths = [ '/Kasper/images/landing1.jpg', '/Kasper/images/landing2.jpg', '/Kasper/images/landing3.jpg' ];
+const imagesPaths = [ 'https://wael-alzain.github.io/Kasper/images/landing1.jpg', 'https://wael-alzain.github.io/Kasper/images/landing2.jpg', 'https://wael-alzain.github.io/Kasper/images/landing3.jpg' ];
 const landingElm = document.querySelector('.landing');
 const landingBullets = document.querySelectorAll('.landing .bullets li');
 
