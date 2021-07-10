@@ -1,3 +1,14 @@
+// Add website loader
+const body = document.querySelector('body');
+body.onload = () => {
+	setTimeout(showPage, 4000);
+};
+
+const showPage = () => {
+	document.getElementById('loader').style.display = 'none';
+	document.getElementById('root-container').style.display = 'block';
+};
+
 /* Start Go To Top Button */
 const goToTop = document.querySelector('.fixed-btn');
 
@@ -22,7 +33,7 @@ goToTop.addEventListener('click', () => {
 
 /* Start Landing section carousel slider */
 
-const imagesPaths = [ '../images/landing1.jpg', '../images/landing2.jpg', '../images/landing3.jpg' ];
+const imagesPaths = [ './../images/landing1.jpg', './../images/landing2.jpg', './../images/landing3.jpg' ];
 const landingElm = document.querySelector('.landing');
 const landingBullets = document.querySelectorAll('.landing .bullets li');
 

@@ -40,6 +40,10 @@ ul {
     list-style: none;
 }
 
+#root-container {
+    display: none;
+}
+
 .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -119,6 +123,94 @@ ul {
 }
 
 /* End Components */
+
+/* Start Loader */
+
+#loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background-color: #000;
+    min-height: 100vh;
+}
+
+#loader h2 {
+    font-size: 6rem;
+    font-weight: 500;
+    color: #333
+}
+
+#loader h2 span {
+    animation: animate 1s linear infinite;
+}
+
+#loader h2 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#loader h2 span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+#loader h2 span:nth-child(3) {
+    animation-delay: 0.30s;
+}
+
+#loader h2 span:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+#loader h2 span:nth-child(5) {
+    animation-delay: 0.60s;
+}
+
+#loader h2 span:nth-child(6) {
+    animation-delay: 0.75s;
+}
+
+@keyframes animate {
+    0%, 80% {
+        color: #333;
+        text-shadow: none;
+    }
+    100% {
+        color: #fff;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff, 0 0 120px #fff, 0 0 160px #fff;
+    }
+}
+
+/* End Loader */
+
+/* Start root container */
+
+.animate-opacity {
+    position: relative;
+    -webkit-animation-name: animateopacity;
+    -webkit-animation-duration: 1s;
+    animation-name: animateopacity;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animateopacity {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes animateopacity {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/* End root container */
 
 /* Start Header */
 
@@ -253,7 +345,7 @@ header nav .form i {
 .landing {
     min-height: 100vh;
     background-color: var(--dark-color);
-    background-image: url('../images/landing1.jpg');
+    background-image: url('./../images/landing1.jpg');
     background-size: cover;
     position: relative;
     transition: background-image 1.5s;
@@ -870,7 +962,7 @@ header nav .form i {
     max-width: 100%;
 }
 
-.skills .container .testimonials .testimonials-slider[data-slider="2"],.skills .container .testimonials .testimonials-slider[data-slider="3"] {
+.skills .container .testimonials .testimonials-slider[data-slider="2"], .skills .container .testimonials .testimonials-slider[data-slider="3"] {
     display: none;
 }
 
