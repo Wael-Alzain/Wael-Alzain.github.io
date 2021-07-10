@@ -1,4 +1,4 @@
-// Add website loader
+/* Start website loader */
 const body = document.querySelector('body');
 body.onload = () => {
 	setTimeout(showPage, 4000);
@@ -8,11 +8,11 @@ const showPage = () => {
 	document.getElementById('loader').style.display = 'none';
 	document.getElementById('root-container').style.display = 'block';
 };
+/* End website loader */
 
 /* Start Go To Top Button */
 const goToTop = document.querySelector('.fixed-btn');
 
-// to show or hide go to top button at specific height
 document.addEventListener('scroll', () => {
 	if (window.scrollY > 200) {
 		goToTop.style.display = 'block';
@@ -21,7 +21,6 @@ document.addEventListener('scroll', () => {
 	}
 });
 
-// scroll to top when click the button
 goToTop.addEventListener('click', () => {
 	window.scrollTo({
 		top: 0,
@@ -31,9 +30,49 @@ goToTop.addEventListener('click', () => {
 
 /* End Go To Top Button */
 
+/* Start toggle menu button */
+const toggleMenuBTN = document.querySelector('header nav .toggle-menu');
+const menu = document.querySelector('header nav ul');
+toggleMenuBTN.onclick = () => {
+	menu.classList = 'show-menu';
+}
+/* End toggle menu button */
+
+/* Start close menu button */
+const closeMenuBTN = document.querySelector('header nav ul .close-menu')
+closeMenuBTN.onclick = () => {
+	menu.style.display = 'none';
+	menu.classList = ' '
+}
+/* End close menu button */
+
+
+/* Start search input */
+const searchBTN = document.querySelector('header .form');
+const searchContainer = document.querySelector('header .search-container');
+const searchCloseBTN = document.querySelector('header .search-container i');
+
+searchBTN.onclick = () => {
+	searchContainer.style.opacity = 1;
+	searchContainer.style.pointerEvents = 'initial';
+	menu.classList = ' '
+	menu.style.display = 'none'
+};
+
+searchCloseBTN.onclick = () => {
+	searchContainer.style.opacity = 0;
+	searchContainer.style.pointerEvents = 'none';
+};
+
+/* End search input */
+
 /* Start Landing section carousel slider */
 
-const imagesPaths = [ 'https://wael-alzain.github.io/Kasper/images/landing1.jpg', 'https://wael-alzain.github.io/Kasper/images/landing2.jpg', 'https://wael-alzain.github.io/Kasper/images/landing3.jpg' ];
+const imagesPaths = [
+	'https://wael-alzain.github.io/Kasper/images/landing1.jpg',
+	'https://wael-alzain.github.io/Kasper/images/landing2.jpg',
+	'https://wael-alzain.github.io/Kasper/images/landing3.jpg'
+];
 const landingElm = document.querySelector('.landing');
 const landingBullets = document.querySelectorAll('.landing .bullets li');
 
@@ -60,6 +99,8 @@ for (let i = 0; i < landingBullets.length; i++) {
 }
 
 /* End Landing section carousel slider */
+
+/* Start portfolio section shuffling */
 
 const listItems = document.querySelectorAll('.shuffle li');
 
@@ -97,7 +138,7 @@ for (let i = 0; i < listItems.length; i++) {
 		shuffleEffect(listItems[i].textContent);
 	};
 }
-// End portfolio section shuffling
+/* End portfolio section shuffling */
 
 /* Start Testimonials section carousel slider */
 const slides = document.querySelectorAll('.testimonials .testimonials-slider');
