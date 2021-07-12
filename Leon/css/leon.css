@@ -21,9 +21,14 @@
     src: url('../fonts/WorkSans-ExtraBold.ttf');
 }
 
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Regular.ttf');
+}
+
 * {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
@@ -32,6 +37,10 @@ html {
 
 body {
     font-family: workSans;
+}
+
+#root-container {
+    display: none;
 }
 
 .parent {
@@ -95,6 +104,101 @@ body {
 
 /* End Components */
 
+/* Start loader */
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+.loader-container {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-container h2 {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 60px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;
+}
+
+.lightbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    border-radius: 10px;
+    background: #fff;
+    z-index: 2;
+    box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 60px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;
+    animation: animateLightbar 3s linear infinite;
+}
+
+@keyframes animateLightbar {
+    0%, 5% {
+        transform: scaleY(0) translateX(0);
+    }
+    10% {
+        transform: scaleY(1) translateX(0);
+    }
+    90% {
+        transform: scaleY(1) translateX(calc(600px - 10px));
+    }
+    95%, 100% {
+        transform: scaleY(0) translateX(calc(600px - 10px));
+    }
+}
+
+.topLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    animation: animateToplayer 6s linear infinite;
+}
+
+@keyframes animateToplayer {
+    0%, 2.5% {
+        transform: translateX(0);
+    }
+    5% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(100%);
+    }
+    47.5%, 50% {
+        transform: translateX(100%);
+    }
+    50.001%, 52.5% {
+        transform: translateX(-100%);
+    }
+    55% {
+        transform: translateX(-100%);
+    }
+    95% {
+        transform: translateX(0%);
+    }
+    97.5%, 100% {
+        transform: translateX(0%);
+    }
+}
+
+/* End loader */
+
 /* Start header */
 
 header .container {
@@ -104,11 +208,11 @@ header .container {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .logo {
@@ -125,10 +229,10 @@ header .links .icon {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
 }
 
 header .links .icon span {
@@ -221,7 +325,7 @@ header .links ul li:not(:last-child) a {
     top: 0;
     left: 0;
     -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+    filter: grayscale(100%);
     width: 100%;
     height: 100%;
 }
@@ -241,8 +345,8 @@ header .links ul li:not(:last-child) a {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 2;
     width: 320px;
     max-width: 100%;
@@ -331,22 +435,22 @@ header .links ul li:not(:last-child) a {
     .services-content .service {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         text-align: center;
     }
 }
 
 .services-content .service i {
     -ms-flex-preferred-size: 60px;
-        flex-basis: 60px;
+    flex-basis: 60px;
     color: var(--main-color)
 }
 
 .services-content .service .service-text {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .services-content .service .service-text h3 {
@@ -378,7 +482,7 @@ header .links ul li:not(:last-child) a {
 .services-content .col .image img {
     width: 260px;
     -webkit-box-shadow: -3px 0 10px 2px #000000b0;
-            box-shadow: -3px 0 10px 2px #000000b0;
+    box-shadow: -3px 0 10px 2px #000000b0;
 }
 
 @media (max-width: 1199px) {
@@ -442,18 +546,18 @@ header .links ul li:not(:last-child) a {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 @media (max-width: 991px) {
     .about .about-content {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         text-align: center;
     }
 }
@@ -463,7 +567,7 @@ header .links ul li:not(:last-child) a {
     height: 365px;
     position: relative;
     -webkit-box-shadow: 3px 0 10px 2px #000000b0;
-            box-shadow: 3px 0 10px 2px #000000b0;
+    box-shadow: 3px 0 10px 2px #000000b0;
 }
 
 @media (max-width: 991px) {
@@ -508,7 +612,7 @@ header .links ul li:not(:last-child) a {
 
 .about .about-content .about-text {
     -ms-flex-preferred-size: calc(100% - 500px);
-        flex-basis: calc(100% - 500px);
+    flex-basis: calc(100% - 500px);
 }
 
 .about .about-content .about-text p:first-of-type {
@@ -593,11 +697,11 @@ footer {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     color: #fff;
     font-size: 18px;
 }
