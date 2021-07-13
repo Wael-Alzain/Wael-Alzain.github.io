@@ -12,7 +12,7 @@ $(document).ready(function() {
 /* Start website loader */
 const body = document.querySelector('body');
 body.onload = () => {
-	setTimeout(showPage, 4000);
+	setTimeout(showPage, 1500);
 };
 
 const showPage = () => {
