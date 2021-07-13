@@ -1,7 +1,7 @@
 /* Start website loader */
 const body = document.querySelector('body');
 body.onload = () => {
-	setTimeout(showPage, 9000);
+	setTimeout(showPage, 3000);
 };
 
 const showPage = () => {
